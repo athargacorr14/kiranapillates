@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143026" />
+  <meta name="description" content="Testimoni member Kinara Pilates & Movement Studio dari berbagai cabang." />
+  <title>Testimoni — Kinara Pilates & Movement Studio</title>
+  <link rel="icon" href="assets/kinara-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+</head>
+<body data-page="testi">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <span>Testimoni</span></nav>
+        <span class="kicker">Testimoni</span>
+        <h1 class="h1">Cerita dari <em>member Kinara.</em></h1>
+        <p class="lead">Pengalaman bergerak di empat cabang Kinara, dalam kata-kata mereka sendiri.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="filters" id="tFilters" role="group" aria-label="Filter cabang"></div>
+      <div class="t-masonry" id="tGrid"></div>
+    </section>
+
+    <section class="section wrap" id="bagikan">
+      <div class="share" data-reveal>
+        <div><span class="kicker">Bagikan pengalamanmu</span><h2 class="h2">Sudah berlatih <em>di Kinara?</em></h2><p>Ceritakan pengalamanmu. Pesan akan dikirim ke tim Kinara lewat WhatsApp, dan dengan izinmu bisa ditampilkan di halaman ini.</p></div>
+        <form id="tForm" novalidate>
+          <div class="row">
+            <input id="tName" type="text" placeholder="Nama (boleh disingkat)" autocomplete="name" aria-label="Nama">
+            <select id="tBranch" aria-label="Cabang"></select>
+          </div>
+          <textarea id="tText" placeholder="Bagaimana pengalaman latihanmu?" aria-label="Pengalaman"></textarea>
+          <label class="consent"><input id="tOk" type="checkbox"> <span>Saya mengizinkan testimoni ini ditampilkan di website Kinara.</span></label>
+          <p id="tErr" class="err" role="alert" hidden></p>
+          <button class="btn btn-lime" type="submit"><iconify-icon icon="ri:whatsapp-line" class="ic"></iconify-icon> Kirim lewat WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="wrap" id="ctaMount"></section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/testi.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143026" />
+  <meta name="description" content="Booking kelas Reformer atau Tower di Kinara Pilates & Movement Studio. Pilih cabang, tanggal, jam, dan coach, lalu kirim lewat WhatsApp." />
+  <title>Booking Kelas — Kinara Pilates & Movement Studio</title>
+  <link rel="icon" href="assets/kinara-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+</head>
+<body data-page="booking">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="bk-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <span>Booking kelas</span></nav>
+        <span class="kicker">Booking kelas</span>
+        <h1 class="h1">Pilih sesi, <em>kami siapkan tempatnya.</em></h1>
+        <p class="lead">Empat langkah singkat. Setelah selesai, detail booking terkirim ke WhatsApp tim cabang untuk dikonfirmasi.</p>
+        <i class="orb o1" data-depth="26" aria-hidden="true"></i><i class="orb o2" data-depth="-18" aria-hidden="true"></i>
+      </div>
+    </section>
+
+    <section class="wrap bk-wrap">
+      <div class="bk-layout">
+        <div class="bk-main">
+          <ol class="stepper" id="stepper" aria-label="Langkah booking"></ol>
+          <form id="bkForm" class="bk-panels" novalidate>
+            <!-- 1 -->
+            <fieldset class="panel on" data-step="1">
+              <legend><span>Langkah 1</span><h2>Pilih cabang</h2></legend>
+              <div class="opt-grid" id="optBranch"></div>
+            </fieldset>
+            <!-- 2 -->
+            <fieldset class="panel" data-step="2">
+              <legend><span>Langkah 2</span><h2>Pilih kelas</h2></legend>
+              <div class="opt-grid two" id="optClass"></div>
+            </fieldset>
+            <!-- 3 -->
+            <fieldset class="panel" data-step="3">
+              <legend><span>Langkah 3</span><h2>Tanggal &amp; jam</h2></legend>
+              <p class="mini-label">Tanggal (14 hari ke depan)</p>
+              <div class="date-strip" id="dateStrip" role="radiogroup" aria-label="Tanggal"></div>
+              <div id="slotArea"></div>
+            </fieldset>
+            <!-- 4 -->
+            <fieldset class="panel" data-step="4">
+              <legend><span>Langkah 4</span><h2>Data diri</h2></legend>
+              <div class="fields">
+                <label class="field"><span>Nama lengkap</span><input id="fName" name="name" type="text" autocomplete="name" placeholder="Nama Anda" required></label>
+                <label class="field"><span>Nomor WhatsApp</span><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" required></label>
+              </div>
+              <p class="mini-label">Pengalaman Pilates</p>
+              <div class="seg" id="segLevel" role="radiogroup" aria-label="Pengalaman">
+                <button type="button" role="radio" aria-checked="true" data-v="Pemula (belum pernah)">Pemula</button>
+                <button type="button" role="radio" aria-checked="false" data-v="Pernah mencoba">Pernah mencoba</button>
+                <button type="button" role="radio" aria-checked="false" data-v="Rutin berlatih">Rutin berlatih</button>
+              </div>
+              <label class="field"><span>Catatan (opsional)</span><textarea id="fNote" name="note" rows="3" placeholder="Cedera, kondisi kesehatan, atau hal yang ingin coach ketahui"></textarea></label>
+            </fieldset>
+            <!-- 5 -->
+            <fieldset class="panel" data-step="5">
+              <legend><span>Langkah 5</span><h2>Periksa &amp; kirim</h2></legend>
+              <div class="review" id="review"></div>
+              <p class="review-note"><iconify-icon icon="ri:information-line" class="ic"></iconify-icon> Ini permintaan booking. Slot dinyatakan aman setelah tim cabang mengonfirmasi lewat WhatsApp.</p>
+            </fieldset>
+
+            <p class="err" id="err" role="alert" hidden></p>
+            <div class="bk-nav">
+              <button type="button" class="btn btn-ghost" id="btnBack"><iconify-icon icon="ri:arrow-left-line" class="ic"></iconify-icon> Kembali</button>
+              <button type="button" class="btn btn-primary" id="btnNext">Lanjut <iconify-icon icon="ri:arrow-right-line" class="ic"></iconify-icon></button>
+            </div>
+          </form>
+
+          <div class="done" id="done" hidden>
+            <div class="done-ic"><iconify-icon icon="ri:check-line"></iconify-icon></div>
+            <h2>Hampir selesai!</h2>
+            <p>WhatsApp sudah dibuka dengan detail booking Anda. Tekan <b>kirim</b> di WhatsApp agar tim cabang bisa mengonfirmasi.</p>
+            <div class="done-actions"><a class="btn btn-wa" id="reSend" target="_blank" rel="noopener"><iconify-icon icon="ri:whatsapp-line" class="ic"></iconify-icon> Buka WhatsApp lagi</a><a class="btn btn-ghost" href="index.html">Kembali ke beranda</a></div>
+          </div>
+        </div>
+
+        <aside class="bk-side" aria-label="Ringkasan booking">
+          <div class="sum" data-depth="8">
+            <h3>Ringkasan</h3>
+            <dl id="sumList"></dl>
+            <p class="sum-hint">Isi langkah demi langkah, ringkasan ikut berubah.</p>
+          </div>
+          <div class="help"><iconify-icon icon="ri:customer-service-2-line" class="ic"></iconify-icon><div><b>Butuh bantuan memilih?</b><a id="helpWa" target="_blank" rel="noopener">Chat tim Kinara</a></div></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

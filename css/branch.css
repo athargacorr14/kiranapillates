@@ -1,0 +1,124 @@
+/* =========================================================
+   KINARA — halaman cabang (satu template, satu konsep)
+   ========================================================= */
+:root{--card:#fff;--card-2:#eef8d8;--acc:var(--mint-d);--bd:var(--line);--fg:var(--ink);--mut:var(--muted)}
+.bcard{color:var(--ink)}
+
+/* ---------- Hero melayang ---------- */
+.bh{position:relative;overflow:hidden;padding-block:clamp(28px,5vw,64px) clamp(56px,8vw,96px)}
+.bh::before{content:"";position:absolute;width:min(640px,80vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#eefac9,var(--lime));right:-14%;top:-18%}
+.bh::after{content:"";position:absolute;width:min(300px,45vw);aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(63,138,108,.35);left:-8%;bottom:-14%}
+.bh-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,64px);align-items:center}
+.bh-grid>*{min-width:0}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--muted);margin-bottom:22px;transition:color .2s}
+.back:hover{color:var(--mint-d)}
+.bh .h1{margin:18px 0 18px}
+.bh .lead{margin-bottom:24px}
+.bh-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.bh-actions{display:flex;gap:12px;flex-wrap:wrap}
+.bh-stage{position:relative;max-width:520px;width:100%;margin-left:auto;margin-right:0}
+.bh-swiper{width:100%;aspect-ratio:4/4.8;overflow:hidden;background:var(--lime);border-radius:200px 200px var(--r-lg) var(--r-lg);box-shadow:0 40px 70px -34px rgba(20,48,38,.55)}
+.bh-swiper .swiper-wrapper,.bh-swiper .swiper-slide{height:100%}
+.bh-swiper .swiper-slide{position:relative}
+.bh-swiper img{width:100%;height:100%;object-fit:cover}
+.slide-cap{position:absolute;left:16px;bottom:16px;right:16px;color:#fff;font-size:.86rem;font-weight:600;padding:10px 14px;border-radius:14px;background:rgba(14,32,24,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.bh-swiper .swiper-pagination{bottom:70px!important}
+.bh-swiper .swiper-pagination-bullet{background:#fff!important;opacity:.7!important}
+.bh-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:11px 15px;border-radius:18px;box-shadow:var(--shadow);animation:float 6s ease-in-out infinite}
+.bh-badge .ic{font-size:1.5rem;color:var(--mint-d)}
+.bh-badge b{display:block;font-size:.86rem;line-height:1.2}.bh-badge small{color:var(--muted);font-size:.72rem}
+.bh-badge.a{left:0;top:14%}.bh-badge.b{right:0;bottom:24%;animation-delay:-2.2s;animation-duration:7s}
+
+/* ---------- Info bar ---------- */
+.info-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.info-item{display:flex;gap:14px;align-items:center;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 14px 30px -24px rgba(20,48,38,.5);transition:transform .35s var(--ease)}
+.info-item:hover{transform:translateY(-4px)}
+.info-item>.ic{font-size:1.5rem;color:var(--mint-d);background:var(--lime);padding:10px;border-radius:14px;box-sizing:content-box;flex:none}
+.info-item small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info-item b{font-size:.95rem;line-height:1.3;display:block}
+
+/* ---------- Jadwal: tab hari + kartu sesi ---------- */
+.dtabs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:20px}
+.dtabs button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:18px;padding:12px 4px;min-height:60px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:.3s var(--ease)}
+.dtabs button b{font:600 1.15rem var(--display)}.dtabs button span{font-size:.7rem;color:var(--muted)}
+.dtabs button:hover{border-color:var(--mint)}
+.dtabs button[aria-selected="true"]{background:var(--forest);color:#fff;border-color:var(--forest);transform:translateY(-4px);box-shadow:0 14px 24px -14px rgba(20,48,38,.7)}
+.dtabs button[aria-selected="true"] span{color:inherit;opacity:.8}
+.dpanel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,4vw,38px);box-shadow:var(--shadow);animation:fadeUp .5s var(--ease)}
+.dp-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.dp-head h3{font:600 clamp(1.7rem,3.4vw,2.3rem) var(--display)}
+.now{display:inline-block;background:var(--lime);color:var(--forest);font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.dp-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.shift-card{position:relative;padding:24px;border-radius:var(--r);background:var(--card-2);display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.shift-card.wide{grid-column:1/-1}
+.shift-card small{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.shift-card em{font:italic 500 1.1rem var(--display);color:var(--mint-d);margin-bottom:8px}
+.coach{display:block;font:600 clamp(1.3rem,2.6vw,1.75rem)/1.2 var(--display)}
+.coach.is-cover{font-style:italic;opacity:.7}
+.sc-ic{position:absolute;right:16px;top:12px;font-size:2.6rem;color:var(--mint-d);opacity:.22}
+.sc-book{margin-top:12px;align-self:flex-start;padding:10px 18px;font-size:.85rem}
+.note{font-size:.82rem;color:var(--muted);margin-top:14px;display:flex;gap:6px}
+.legend{margin-top:20px;font-size:.86rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.legend .ic{margin-top:3px;color:var(--mint-d)}
+.mx-title{font:600 1.5rem var(--display);margin:clamp(34px,5vw,54px) 0 16px}
+.mx-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff;-webkit-overflow-scrolling:touch}
+.matrix{width:100%;min-width:640px;border-collapse:collapse;font-size:.9rem}
+.matrix th,.matrix td{padding:14px 12px;text-align:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.matrix tr:last-child>*{border-bottom:0}.matrix tr>*:last-child{border-right:0}
+.matrix thead th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.matrix tbody th{text-align:left;font-weight:700;min-width:100px}.matrix tbody th small{display:block;font-weight:500;color:var(--muted);font-size:.72rem}
+.matrix td{font-weight:600}.matrix td.cover{font-style:italic;opacity:.7}
+.matrix td.full{background:var(--card-2);color:var(--mint-d);font-weight:800}.matrix td.full small{display:block;font-weight:500;font-size:.7rem;color:var(--muted);margin-top:2px}
+.matrix .is-today{background:#f4fbe0}
+
+/* ---------- Kelas di cabang ---------- */
+.bclass{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.bclass article{display:flex;gap:18px;align-items:center;padding:16px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);transition:transform .35s var(--ease),box-shadow .35s}
+.bclass article:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.bclass img{width:110px;height:130px;object-fit:cover;border-radius:18px;flex:none}
+.bclass h3{font:600 1.3rem var(--display);margin-bottom:4px}.bclass p{font-size:.9rem;color:var(--muted)}
+
+/* ---------- Galeri mini ---------- */
+.mini-gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(130px,17vw,190px);gap:12px}
+.mg{position:relative;border-radius:var(--r);overflow:hidden;background:var(--lime)}
+.mg img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.mg:hover img{transform:scale(1.08)}
+.mg span{position:absolute;inset:auto 0 0 0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(10,24,18,.78));color:#fff;font-size:.8rem;font-weight:600;opacity:0;transition:opacity .35s}
+.mg:hover span{opacity:1}
+.mg-1{grid-column:span 2;grid-row:span 2}.mg-4{grid-column:span 2}
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(24px,4vw,38px)}
+.gal-head .h2{margin-top:14px}
+.sec-title{margin-bottom:clamp(26px,4vw,42px)}
+.sec-title .h2{margin-top:14px}
+.sec-title p{margin-top:12px;color:var(--muted);max-width:52ch}
+
+/* ---------- Banner reservasi ---------- */
+.book{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:clamp(34px,6vw,68px);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;background:var(--forest);color:#fff}
+.book::before{content:"";position:absolute;width:420px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(114,190,160,.35),transparent 65%);right:-100px;top:-140px;animation:float 9s ease-in-out infinite}
+.book>*{position:relative;min-width:0}
+.book .kicker{color:var(--lime)}.book .h2 em{color:var(--lime)}
+.book p{max-width:44ch;margin-top:14px;color:#c4d6c0}
+.book-actions{display:flex;flex-direction:column;gap:12px}
+.book .btn{justify-content:center}
+.book .btn-out{border-color:rgba(229,248,189,.5);color:var(--lime)}.book .btn-out:hover{background:var(--lime);color:var(--forest)}
+.others-sec .branch-grid{grid-template-columns:repeat(3,1fr)}
+
+@media(max-width:1000px){
+  .bh-grid,.book{grid-template-columns:1fr}
+  .bh-stage{order:-1;margin-inline:auto}
+  .info-bar{grid-template-columns:repeat(2,1fr)}
+  .others-sec .branch-grid{grid-template-columns:repeat(2,1fr)}
+  .mini-gallery{grid-template-columns:repeat(3,1fr)}.mg-4{grid-column:span 1}
+  .book-actions{flex-direction:row;flex-wrap:wrap}.book-actions .btn{flex:1 1 200px}
+}
+@media(max-width:700px){
+  .bh-swiper{border-radius:140px 140px 24px 24px}
+  .dtabs{display:flex;overflow-x:auto;gap:8px;padding:0 var(--gut) 8px;margin-inline:calc(var(--gut)*-1);scrollbar-width:none;scroll-snap-type:x mandatory}
+  .dtabs::-webkit-scrollbar{display:none}
+  .dtabs button{flex:0 0 76px;scroll-snap-align:start}
+  .dp-cards{grid-template-columns:1fr}
+  .others-sec .branch-grid{grid-template-columns:1fr}
+  .info-bar{grid-template-columns:1fr}
+  .mini-gallery{grid-template-columns:repeat(2,1fr)}.mg-1{grid-column:span 2}
+  .bclass img{width:88px;height:104px}
+}

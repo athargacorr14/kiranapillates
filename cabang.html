@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143026" />
+  <meta name="description" content="Jadwal coach, jenis kelas, dan reservasi di cabang Kinara Pilates & Movement Studio." />
+  <title>Cabang — Kinara Pilates & Movement Studio</title>
+  <link rel="icon" href="assets/kinara-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/branch.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+</head>
+<body data-page="branch">
+  <script>document.body.dataset.branch = new URLSearchParams(location.search).get('id') || 'galaxy';</script>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="bh">
+      <div class="wrap bh-grid">
+        <div>
+          <a class="back" href="index.html#cabang"><iconify-icon icon="ri:arrow-left-line" class="ic"></iconify-icon> Semua cabang</a><br>
+          <span class="kicker" id="bArea">Cabang Kinara</span>
+          <h1 class="h1" id="bTitle">Kinara</h1>
+          <p class="lead" id="bLead"></p>
+          <div class="bh-tags" id="bTags"></div>
+          <div class="bh-actions">
+            <a class="btn btn-primary" id="bBook"><iconify-icon icon="ri:calendar-check-line" class="ic"></iconify-icon> Booking kelas</a>
+            <a class="btn btn-ghost" href="#jadwal">Lihat jadwal <iconify-icon icon="ri:arrow-down-line" class="ic"></iconify-icon></a>
+          </div>
+        </div>
+        <div class="bh-stage" data-depth="14">
+          <div class="swiper bh-swiper" id="bSwiper" aria-label="Foto suasana cabang"><div class="swiper-wrapper" id="bSlides"></div><div class="swiper-pagination"></div></div>
+          <div class="bh-badge a" data-depth="26"><iconify-icon icon="ri:map-pin-2-fill" class="ic"></iconify-icon><div><b id="bArea2">Lokasi</b><small>Studio Kinara</small></div></div>
+          <div class="bh-badge b" data-depth="-20"><iconify-icon icon="ri:time-fill" class="ic"></iconify-icon><div><b>07.00 – 21.00</b><small>Setiap hari</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap"><div class="info-bar" id="infoBar"></div></section>
+
+    <section class="section" id="kelas-cabang">
+      <div class="wrap">
+        <div class="sec-title" data-reveal><span class="kicker">Kelas tersedia</span><h2 class="h2">Pilih cara <em>bergerakmu.</em></h2></div>
+        <div class="bclass" id="bClass"></div>
+      </div>
+    </section>
+
+    <section class="section" id="jadwal" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-title" data-reveal><span class="kicker">Jadwal mingguan</span><h2 class="h2">Siapa yang <em>mengajar?</em></h2><p>Pilih hari untuk melihat coach sesi pagi (07.00–14.00) dan sore (14.00–21.00).</p></div>
+        <div id="schedule"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-title" data-reveal><span class="kicker">Coach cabang</span><h2 class="h2">Tim di <em>studio ini.</em></h2></div>
+        <div class="coach-grid" id="bCoaches"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="gal-head"><div><span class="kicker">Galeri</span><h2 class="h2">Suasana <em>studio.</em></h2></div><a class="link-arrow js-album">Buka semua foto <iconify-icon icon="ri:arrow-right-up-line" class="ic"></iconify-icon></a></div>
+        <div class="one-frame" data-reveal>
+          <div class="one-bar" id="oneBar" aria-hidden="true"></div>
+          <div class="swiper one-swiper" id="oneSwiper" aria-label="Foto suasana studio"><div class="swiper-wrapper" id="miniGallery"></div></div>
+          <div class="one-ui">
+            <div class="one-cap"><small id="oneTag">Suasana studio</small><b id="oneCap"></b></div>
+            <div class="one-ctrl">
+              <button type="button" id="onePrev" aria-label="Foto sebelumnya"><iconify-icon icon="ri:arrow-left-s-line"></iconify-icon></button>
+              <span class="one-count" id="oneCount">1 / 5</span>
+              <button type="button" id="oneNext" aria-label="Foto berikutnya"><iconify-icon icon="ri:arrow-right-s-line"></iconify-icon></button>
+              <a class="js-album" aria-label="Buka semua foto"><iconify-icon icon="ri:arrow-right-up-line"></iconify-icon></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="book" data-reveal>
+        <div><span class="kicker">Reservasi</span><h2 class="h2" style="margin-top:14px">Siap <em>bergerak?</em></h2><p>Pilih tanggal, jam, dan coach lewat form booking. Konfirmasi dikirim lewat WhatsApp ke tim cabang.</p></div>
+        <div class="book-actions"><a class="btn btn-lime" id="bBook2"><iconify-icon icon="ri:calendar-check-line" class="ic"></iconify-icon> Booking kelas</a><a class="btn btn-out js-maps"><iconify-icon icon="ri:map-pin-2-line" class="ic"></iconify-icon> Buka lokasi</a><a class="btn btn-out js-wa"><iconify-icon icon="ri:whatsapp-line" class="ic"></iconify-icon> Tanya via WhatsApp</a></div>
+      </div>
+    </section>
+
+    <section class="section others-sec"><div class="wrap">
+      <div class="sec-title"><span class="kicker">Cabang lainnya</span><h2 class="h2">Kinara di <em>dekat Anda.</em></h2></div>
+      <div class="branch-grid" id="others"></div>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/branch.js"></script>
+</body>
+</html>

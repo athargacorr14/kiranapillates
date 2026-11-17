@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143026" />
+  <meta name="description" content="Kinara Pilates & Movement Studio — kelas Reformer dan Tower di Galaxy, Persada, Kelapa Gading, dan Cikarang Selatan. Lihat jadwal coach dan reservasi lewat WhatsApp." />
+  <title>Kinara Pilates & Movement Studio</title>
+  <link rel="icon" href="assets/kinara-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="kicker">Pilates &amp; Movement Studio</span>
+          <h1 class="h1" style="margin-top:20px">Temukan <em>ritme</em> tubuhmu sendiri.</h1>
+          <p class="lead">Kelas Reformer dan Tower yang dipandu coach berpengalaman, dalam ruang yang hangat dan nyaman. Mulai dari pemula sampai yang sudah terbiasa bergerak.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="booking.html"><iconify-icon icon="ri:calendar-check-line" class="ic"></iconify-icon> Booking kelas</a>
+            <a class="btn btn-ghost" href="#cabang">Lihat cabang &amp; jadwal</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>4</b><span>Cabang studio</span></div>
+            <div><b>2</b><span>Jenis kelas</span></div>
+            <div><b id="coachCount">20+</b><span>Coach aktif</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" data-depth="12">
+          <i class="hv-ring" aria-hidden="true"></i><i class="hv-dots" aria-hidden="true"></i>
+          <div class="swiper hero-swiper" id="heroSwiper" aria-roledescription="carousel" aria-label="Suasana kelas Kinara">
+            <div class="hero-progress" id="heroProgress"></div>
+            <div class="swiper-wrapper" id="heroSlides"></div>
+          </div>
+          <div class="hero-ctrl">
+            <button id="heroPrev" aria-label="Foto sebelumnya"><iconify-icon icon="ri:arrow-left-s-line" class="ic"></iconify-icon></button>
+            <span class="hero-count" id="heroCount">01 / 05</span>
+            <button id="heroNext" aria-label="Foto berikutnya"><iconify-icon icon="ri:arrow-right-s-line" class="ic"></iconify-icon></button>
+          </div>
+          <div class="hv-orb" data-depth="30" aria-hidden="true"><img id="hvOrb" alt=""></div>
+          <div class="hv-spark s1" data-depth="-18" aria-hidden="true"><iconify-icon icon="ri:sparkling-2-fill"></iconify-icon></div>
+          <div class="hv-spark s2" data-depth="24" aria-hidden="true"><iconify-icon icon="ri:sparkling-fill"></iconify-icon></div>
+          <div class="hv-tag" data-depth="-12"><span>Reformer</span><i></i><span>Tower</span></div>
+          <div class="badge badge-b" data-depth="-22"><iconify-icon icon="ri:time-line" class="ic"></iconify-icon><div><b>Setiap hari</b><small>07.00 – 21.00</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <!-- TENTANG -->
+    <section class="section" id="tentang">
+      <div class="wrap about-grid">
+        <div class="about-photos" data-reveal>
+          <figure class="ap-1"><img id="apImg1" alt="Latihan pilates di studio" loading="lazy"></figure>
+          <figure class="ap-2"><img id="apImg2" alt="Peregangan dan relaksasi" loading="lazy"></figure>
+          <div class="about-note">Pendekatan lembut untuk tubuh yang lebih kuat.</div>
+        </div>
+        <div class="about-copy" data-reveal>
+          <span class="kicker">Tentang Kinara</span>
+          <h2 class="h2">Lebih dari sekadar olahraga. <em>Sebuah rasa.</em></h2>
+          <p class="lead">Di Kinara, bergerak bukan soal sempurna. Ini tentang hadir, mendengarkan tubuh, dan menemukan seberapa kuat Anda sebenarnya.</p>
+          <div class="values">
+            <div class="value"><iconify-icon icon="ri:user-heart-line" class="ic"></iconify-icon><div><h3>Dipandu, bukan ditinggal</h3><p>Coach membimbing setiap gerakan dan menyesuaikannya dengan kondisi tubuh Anda.</p></div></div>
+            <div class="value"><iconify-icon icon="ri:heart-pulse-line" class="ic"></iconify-icon><div><h3>Low-impact, hasil nyata</h3><p>Melatih core, postur, dan fleksibilitas tanpa membebani sendi.</p></div></div>
+            <div class="value"><iconify-icon icon="ri:group-line" class="ic"></iconify-icon><div><h3>Komunitas yang hangat</h3><p>Ruang yang ramah untuk pemula, tanpa rasa canggung.</p></div></div>
+          </div>
+          <a class="link-arrow" href="#cabang">Temukan studio terdekat <iconify-icon icon="ri:arrow-right-up-line" class="ic"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- KELAS -->
+    <section class="section classes" id="kelas">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Kelas kami</span><h2 class="h2">Pilih cara <em>bergerakmu.</em></h2></div>
+          <p>Dua jenis kelas dengan karakter berbeda. Belum yakin mana yang cocok? Tim kami siap membantu memilih.</p>
+        </div>
+        <div class="class-tabs" role="tablist" id="classTabs" data-reveal></div>
+        <div id="classPanels"></div>
+      </div>
+    </section>
+
+    <!-- CABANG -->
+    <section class="section" id="cabang">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Cabang &amp; jadwal</span><h2 class="h2">Empat studio, <em>satu rasa Kinara.</em></h2></div>
+          <p>Klik cabang untuk melihat jadwal coach, jenis kelas, dan cara reservasi.</p>
+        </div>
+        <div class="branch-grid" id="branchGrid"></div>
+      </div>
+    </section>
+
+    <!-- MANFAAT -->
+    <section class="section benefits" id="manfaat">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Manfaat Pilates</span><h2 class="h2">Gerak kecil, <em>perubahan besar.</em></h2></div>
+          <p>Konsistensi lebih penting dari kesempurnaan. Setiap sesi adalah cara merawat diri.</p>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit" data-reveal><iconify-icon icon="ri:body-scan-line" class="ic"></iconify-icon><h3>Core lebih kuat</h3><p>Melatih otot perut, punggung, dan panggul sebagai pusat stabilitas tubuh.</p></div>
+          <div class="benefit" data-reveal><iconify-icon icon="ri:user-star-line" class="ic"></iconify-icon><h3>Postur lebih baik</h3><p>Membantu tubuh lebih tegak, terutama bagi yang banyak duduk seharian.</p></div>
+          <div class="benefit" data-reveal><iconify-icon icon="ri:swap-line" class="ic"></iconify-icon><h3>Fleksibel &amp; mobile</h3><p>Meningkatkan rentang gerak sendi dan kelenturan otot secara bertahap.</p></div>
+          <div class="benefit" data-reveal><iconify-icon icon="ri:shield-check-line" class="ic"></iconify-icon><h3>Ramah sendi</h3><p>Gerakan low-impact yang bisa disesuaikan untuk berbagai kondisi tubuh.</p></div>
+          <div class="benefit" data-reveal><iconify-icon icon="ri:lungs-line" class="ic"></iconify-icon><h3>Napas &amp; fokus</h3><p>Koordinasi napas dan gerak membantu pikiran lebih tenang dan hadir.</p></div>
+          <div class="benefit" data-reveal><iconify-icon icon="ri:leaf-line" class="ic"></iconify-icon><h3>Seimbang jiwa raga</h3><p>Setelah sesi, tubuh terasa segar dan pikiran lebih ringan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section class="section gallery-sec" id="galeri">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Galeri</span><h2 class="h2">Intip suasana <em>di studio.</em></h2></div>
+          <p>Geser untuk menjelajah, klik untuk membuka album lengkap tiap kelas dan cabang.</p>
+        </div>
+      </div>
+      <div class="swiper cover-swiper" id="coverSwiper"><div class="swiper-wrapper" id="coverSlides"></div><div class="swiper-pagination"></div></div>
+      <div class="center-cta"><a class="btn btn-ghost" href="galeri.html">Buka semua galeri <iconify-icon icon="ri:arrow-right-up-line" class="ic"></iconify-icon></a></div>
+    </section>
+
+    <!-- CARA MULAI -->
+    <section class="section steps" id="mulai">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Cara mulai</span><h2 class="h2">Empat langkah <em>sederhana.</em></h2></div>
+          <p>Dari memilih studio sampai kelas pertama Anda, semuanya dibuat mudah.</p>
+        </div>
+        <div class="step-grid">
+          <div class="step" data-reveal><h3>Pilih cabang</h3><p>Pilih studio terdekat: Galaxy, Persada, Kelapa Gading, atau Cikarang Selatan.</p></div>
+          <div class="step" data-reveal><h3>Cek jadwal coach</h3><p>Lihat sesi pagi (07.00–14.00) atau sore (14.00–21.00) beserta coach-nya.</p></div>
+          <div class="step" data-reveal><h3>Isi form booking</h3><p>Pilih tanggal, jam, dan coach. Detail terkirim ke WhatsApp tim cabang.</p></div>
+          <div class="step" data-reveal><h3>Datang &amp; bergerak</h3><p>Pakai pakaian nyaman, tarik napas, dan nikmati sesi pertama Anda.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACH -->
+    <section class="section coach-sec" id="coach">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div><span class="kicker">Tim coach</span><h2 class="h2">Dipandu oleh <em>coach kami.</em></h2></div>
+          <div style="display:grid;gap:16px;justify-items:start"><p>Coach berotasi di beberapa cabang. Geser untuk berkenalan, lalu cek jadwal cabang untuk tahu siapa yang mengajar.</p>
+            <div class="car-ctrl"><button id="coachPrev" aria-label="Coach sebelumnya"><iconify-icon icon="ri:arrow-left-line"></iconify-icon></button><button id="coachNext" aria-label="Coach berikutnya"><iconify-icon icon="ri:arrow-right-line"></iconify-icon></button></div></div>
+        </div>
+        <div class="swiper coach-swiper" id="coachSwiper" aria-label="Daftar coach Kinara"><div class="swiper-wrapper" id="coachSlides"></div></div>
+        <div class="coach-bar" id="coachBar"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="section testi-sec" id="testimoni">
+      <div class="wrap testi-split">
+        <div data-reveal>
+          <span class="kicker">Testimoni</span>
+          <h2 class="h2">Cerita dari <em>member kami.</em></h2>
+          <p class="lead">Pengalaman nyata bergerak bersama Kinara: dari pemula yang canggung sampai yang kini rutin berlatih.</p>
+          <div class="testi-actions"><a class="btn btn-primary" href="testimoni.html">Baca semua testimoni <iconify-icon icon="ri:arrow-right-up-line" class="ic"></iconify-icon></a></div>
+        </div>
+        <div class="swiper testi-stack" id="testiSwiper" aria-label="Testimoni member"><div class="swiper-wrapper" id="testiSlides"></div><div class="swiper-pagination"></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap faq-grid">
+        <div data-reveal><span class="kicker">FAQ</span><h2 class="h2">Hal yang sering <em>ditanyakan.</em></h2><p class="lead">Baru mengenal Pilates? Ini jawaban untuk beberapa pertanyaan umum.</p></div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wrap" id="ctaMount"></section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

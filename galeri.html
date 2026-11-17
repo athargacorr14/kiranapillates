@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#143026" />
+  <meta name="description" content="Galeri Kinara Pilates & Movement Studio: album kelas Reformer, Tower, dan suasana setiap cabang." />
+  <title>Galeri — Kinara Pilates & Movement Studio</title>
+  <link rel="icon" href="assets/kinara-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/extras.css" />
+</head>
+<body data-page="gallery">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <span>Galeri</span></nav>
+        <span class="kicker">Galeri Kinara</span>
+        <h1 class="h1">Momen <em>bergerak</em> bersama.</h1>
+        <p class="lead">Pilih album untuk melihat semua foto: per jenis kelas atau per cabang studio.</p>
+      </div>
+    </section>
+    <section class="wrap" style="padding-bottom:0">
+      <div class="filters" id="filters" role="group" aria-label="Filter album">
+        <button class="on" data-f="all">Semua</button>
+        <button data-f="Kelas">Kelas</button>
+        <button data-f="Cabang">Cabang</button>
+      </div>
+      <div class="album-grid" id="albumGrid"></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
